@@ -14,7 +14,44 @@ body {
 }
 
 h2 {
+    padding: 10px;
     text-align: center;
     font-size: 42px;
+    text-transform: uppercase;
 }
 
+/* creating cube */
+#cube-container {
+    position: absolute;
+}
+
+#cube-viewport {
+    perspective: 800px;
+    perspective-origin: 50% 200px;
+}
+
+#cube {
+    position: relative;
+    height: 400px;
+    width: 400px;
+    transform-style: preserve-3d;
+}
+
+#cube .cubes {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    z-index: -1;
+    text-align: center;
+    font-size: 24px;
+}
+
+#cube .cubes div{
+    line-height: 100px;
+}
+
+/* #cube .cubes div span{
+    visibility: hidden;
+} */
