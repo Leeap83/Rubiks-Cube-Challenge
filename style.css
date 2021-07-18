@@ -23,6 +23,7 @@ h2 {
 /* creating cube */
 #cube-container {
     position: absolute;
+    left: 50%;
 }
 
 #cube-viewport {
@@ -55,3 +56,179 @@ h2 {
 /* #cube .cubes div span{
     visibility: hidden;
 } */
+
+/* CUBIES POSITIONS*/
+/*Top-Face cubes*/
+.top-tl {
+    transform:rotateX(90deg) translate3d(50px,-100px,0);
+}
+.top-cl {
+    transform:rotateX(90deg) translate3d(50px,0,0);
+}
+.top-bl {
+    transform:rotateX(90deg) translate3d(50px,100px,0px);
+}
+.top-tc {
+    transform:rotateX(90deg) translate3d(150px,-100px,0);
+
+}
+.top-cc {
+    transform:rotateX(90deg) translate3d(150px,0,0);
+}
+.top-bc {
+    transform:rotateX(90deg) translate3d(150px,100px,0);
+}
+.top-tr {
+    transform:rotateX(90deg) translate3d(250px,-100px,0);
+}
+.top-cr {
+    transform:rotateX(90deg) translate3d(250px,0,0);
+}
+.top-br {
+    transform:rotateX(90deg) translate3d(250px,100px,0);
+}
+
+/*Front-face cubes*/
+.front-tl {
+    transform:translate3d(50px,50px,150px);
+}
+.front-cl {
+    transform:translate3d(50px,150px,150px);
+}
+.front-bl {
+    transform:translate3d(50px,250px,150px);
+}
+.front-tc {
+    transform:translate3d(150px,50px,150px);
+}
+.front-cc {
+    transform:translate3d(150px,150px,150px);
+}
+.front-bc {
+    transform:translate3d(150px,250px,150px);
+}
+.front-tr {
+    transform:translate3d(250px,50px,150px);
+}
+.front-cr {
+    transform:translate3d(250px,150px,150px);
+}
+.front-br {
+    transform:translate3d(250px,250px,150px);
+}
+
+/*Down-face cubes*/
+.down-tl {
+    transform:rotateX(-90deg) translate3d(50px,-100px,300px);
+}
+.down-cl {
+    transform:rotateX(-90deg) translate3d(50px,0,300px);
+}
+.down-bl {
+    transform:rotateX(-90deg) translate3d(50px,100px,300px);
+}
+.down-tc {
+    transform:rotateX(-90deg) translate3d(150px,-100px,300px);
+}
+.down-cc {
+    transform:rotateX(-90deg) translate3d(150px,0px,300px);
+}
+.down-bc {
+    transform:rotateX(-90deg) translate3d(150px,100px,300px);
+}
+.down-tr {
+    transform:rotateX(-90deg) translate3d(250px,-100px,300px);
+}
+.down-cr {
+    transform:rotateX(-90deg) translate3d(250px,0px,300px);
+}
+.down-br {
+    transform:rotateX(-90deg) translate3d(250px,100px,300px);
+}
+
+/*Back-face cubes*/
+.back-tl {
+    transform:rotateX(-180deg) translate3d(50px,-250px,150px);
+}
+.back-cl {
+    transform:rotateX(-180deg) translate3d(50px,-150px,150px);
+}
+.back-bl {
+    transform:rotateX(-180deg) translate3d(50px,-50px,150px);
+}
+.back-tc {
+    transform:rotateX(-180deg) translate3d(150px,-250px,150px);
+}
+.back-cc {
+    transform:rotateX(-180deg) translate3d(150px,-150px,150px);
+}
+.back-bc {
+    transform:rotateX(-180deg) translate3d(150px,-50px,150px);
+}
+.back-tr {
+    transform:rotateX(-180deg) translate3d(250px,-250px,150px);
+}
+.back-cr {
+    transform:rotateX(-180deg) translate3d(250px,-150px,150px);
+}
+.back-br {
+    transform:rotateX(-180deg) translate3d(250px,-50px,150px);
+}
+
+/*Left-face cubes*/
+.left-tl {
+    transform:rotateY(-90deg) translate3d(-100px,50px,0px);
+}
+.left-cl {
+    transform:rotateY(-90deg) translate3d(-100px,150px,0px);
+}
+.left-bl {
+    transform:rotateY(-90deg) translate3d(-100px,250px,0px);
+}
+.left-tc {
+    transform:rotateY(-90deg) translate3d(0px,50px,0px);
+}
+.left-cc {
+    transform:rotateY(-90deg) translate3d(0px,150px,0px);
+}
+.left-bc {
+    transform:rotateY(-90deg) translate3d(0px,250px,0px);
+}
+.left-tr {
+    transform:rotateY(-90deg) translate3d(100px,50px,0px);
+}
+.left-cr {
+    transform:rotateY(-90deg) translate3d(100px,150px,0px);
+}
+.left-br {
+    transform:rotateY(-90deg) translate3d(100px,250px,0px);
+}
+
+/*Right-face cubes*/
+.right-tl {
+    transform:rotateY(90deg) translate3d(-100px,50px,300px);
+}
+.right-cl {
+    transform:rotateY(90deg) translate3d(-100px,150px,300px);
+}
+.right-bl {
+    transform:rotateY(90deg) translate3d(-100px,250px,300px);
+}
+.right-tc {
+    transform:rotateY(90deg) translate3d(0px,50px,300px);
+}
+.right-cc {
+    transform:rotateY(90deg) translate3d(0px,150px,300px);
+}
+.right-bc {
+    transform:rotateY(90deg) translate3d(0px,250px,300px);
+}
+.right-tr {
+    transform:rotateY(90deg) translate3d(100px,50px,300px);
+}
+.right-cr {
+    transform:rotateY(90deg) translate3d(100px,150px,300px);
+}
+.right-br {
+    transform:rotateY(90deg) translate3d(100px,250px,300px);
+}
