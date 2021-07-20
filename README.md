@@ -1,4 +1,4 @@
-# Rubik's Cube Challange
+# Rubik's Cube Challange 
 
 ![Screenshot](cube.png)
 
@@ -7,8 +7,7 @@ develop a programmatic Rubik’s cube that can correctly rotate any face
 
 This program was built using HTML, CSS and Javascript.
 
-
-
+[Rubik's Cube](https://leeap83.github.io/Rubiks-Cube-Challenge/)
 ------
 
 ## Creating the Cube
