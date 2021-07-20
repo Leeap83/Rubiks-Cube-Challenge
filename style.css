@@ -5,6 +5,7 @@
 }
 body {
     padding: 4rem;
+    color: whitesmoke;
     font-family: 'Lato', sans-serif;
     background: radial-gradient(
         circle,
@@ -19,239 +20,281 @@ h2 {
     text-align: center;
     font-size: 42px;
     text-transform: uppercase;
+    color: whitesmoke;
 }
 
-/* creating cube */
-#cube-container {
-    position: absolute;
-}
-
-#cube.threeDView {
-    width:156px;
-    height:156px;
-    top:110px;
-    transform-style:preserve-3d;
-    transform:rotateX(-22deg) rotateY(-38deg) rotateZ(0deg);
-}
-
-#cube {
-    position: relative;
-    height: 400px;
-    width: 400px;
-    transform-style: preserve-3d;
-}
-
-#cube .cubes {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    border: 3px solid #000;
-    border-radius: 10px;
-    z-index: -1;
+h3 {
+    color: whitesmoke;
     text-align: center;
-    font-size: 24px;
+    font-size: 26px;
 }
 
-#cube .cubes div{
+#cube{
+    margin: auto;
+    position: relative;
+    height: 500px;
+    width: 100%;
+    transform-style: preserve-3d;
+    left: 25%;
+}
+   
+#cube .square{
+    position:absolute;
+    margin: 1px;
+    border: 3px solid black;
+    border-radius: 15px;
+    width:  100px;
+    height: 100px;
+    text-align: center;
+    font-size:30px;
+    box-sizing: content-box;
+}
+
+#cube .square > div{
     line-height: 100px;
+    border-radius: 8px;
+   
 }
-
-#cube .cubes div span{
+#cube .square > div span{
     visibility: hidden;
 }
 
+/* CUBIE COLORS*/
+#cube .orange {
+    background-color:#ffaf1c;
+}
+
+#cube .green {
+    background-color:#58d568
+}
+
+#cube .red {
+    background-color:#ed3030
+}
+
+#cube .blue {
+    background-color:#1c5ffe
+}
+
+#cube .yellow  {
+    background-color:#f2f215
+}
+
+#cube .white {
+    background-color:#FFFFFF
+}
+
+/* PLANES & ROTATIONS */
+#plane{
+    transform-style: preserve-3d;
+}
+.moving {
+    transition: all .2s linear;
+}
+
+/*PLANE M */
+.M-left {
+    transform-origin: 0px 200px;
+}
+
+.M-right {
+    transform-origin: 0px 200px;
+}
+
+/*PLANE E */
+.E-right {
+    transform:rotateY(90deg);
+    }
+
+.E-left {
+    transform:rotateY(-90deg);
+}
+
+/*PLANE S */
+.S-left {
+    transform-origin: 200px 200px;
+    transform:rotateZ(-90deg);
+}
+
+.S-right {
+    transform-origin: 200px 200px;
+    transform:rotateZ(90deg);
+}
+
 /* CUBIES POSITIONS*/
-/*Top-Face cubes*/
-.top-tl {
+/*UP FACE CUBIES*/
+.utl {
     transform:rotateX(90deg) translate3d(50px,-100px,0);
 }
-.top-cl {
+.ucl {
     transform:rotateX(90deg) translate3d(50px,0,0);
 }
-.top-bl {
+.ubl {
     transform:rotateX(90deg) translate3d(50px,100px,0px);
 }
-.top-tc {
+.utc {
     transform:rotateX(90deg) translate3d(150px,-100px,0);
-
 }
-.top-cc {
+.ucc {
     transform:rotateX(90deg) translate3d(150px,0,0);
 }
-.top-bc {
+.ubc {
     transform:rotateX(90deg) translate3d(150px,100px,0);
 }
-.top-tr {
+.utr {
     transform:rotateX(90deg) translate3d(250px,-100px,0);
+
 }
-.top-cr {
+.ucr {
     transform:rotateX(90deg) translate3d(250px,0,0);
 }
-.top-br {
+.ubr {
     transform:rotateX(90deg) translate3d(250px,100px,0);
 }
 
-/*Front-face cubes*/
-.front-tl {
+/*FRONT FACE CUBIES*/
+.ftl {
     transform:translate3d(50px,50px,150px);
 }
-.front-cl {
+.fcl {
     transform:translate3d(50px,150px,150px);
+
 }
-.front-bl {
+.fbl {
     transform:translate3d(50px,250px,150px);
 }
-.front-tc {
+.ftc {
     transform:translate3d(150px,50px,150px);
 }
-.front-cc {
+.fcc {
     transform:translate3d(150px,150px,150px);
 }
-.front-bc {
+.fbc {
     transform:translate3d(150px,250px,150px);
 }
-.front-tr {
+.ftr {
     transform:translate3d(250px,50px,150px);
 }
-.front-cr {
+.fcr {
     transform:translate3d(250px,150px,150px);
 }
-.front-br {
+.fbr {
     transform:translate3d(250px,250px,150px);
 }
 
-/*Down-face cubes*/
-.down-tl {
+/*DOWN FACE CUBIES*/
+.dtl {
     transform:rotateX(-90deg) translate3d(50px,-100px,300px);
 }
-.down-cl {
+.dcl {
     transform:rotateX(-90deg) translate3d(50px,0,300px);
 }
-.down-bl {
+.dbl {
     transform:rotateX(-90deg) translate3d(50px,100px,300px);
 }
-.down-tc {
+.dtc {
     transform:rotateX(-90deg) translate3d(150px,-100px,300px);
 }
-.down-cc {
+.dcc {
     transform:rotateX(-90deg) translate3d(150px,0px,300px);
 }
-.down-bc {
+.dbc {
     transform:rotateX(-90deg) translate3d(150px,100px,300px);
 }
-.down-tr {
+.dtr {
     transform:rotateX(-90deg) translate3d(250px,-100px,300px);
 }
-.down-cr {
+.dcr {
     transform:rotateX(-90deg) translate3d(250px,0px,300px);
 }
-.down-br {
+.dbr {
     transform:rotateX(-90deg) translate3d(250px,100px,300px);
 }
 
-/*Back-face cubes*/
-.back-tl {
+/*BACK FACE CUBIES*/
+.btl {
     transform:rotateX(-180deg) translate3d(50px,-250px,150px);
 }
-.back-cl {
+.bcl {
     transform:rotateX(-180deg) translate3d(50px,-150px,150px);
 }
-.back-bl {
+.bbl {
     transform:rotateX(-180deg) translate3d(50px,-50px,150px);
 }
-.back-tc {
+.btc {
     transform:rotateX(-180deg) translate3d(150px,-250px,150px);
+    
 }
-.back-cc {
+.bcc {
     transform:rotateX(-180deg) translate3d(150px,-150px,150px);
 }
-.back-bc {
+.bbc {
     transform:rotateX(-180deg) translate3d(150px,-50px,150px);
 }
-.back-tr {
+.btr {
     transform:rotateX(-180deg) translate3d(250px,-250px,150px);
 }
-.back-cr {
+.bcr {
     transform:rotateX(-180deg) translate3d(250px,-150px,150px);
 }
-.back-br {
+.bbr {
     transform:rotateX(-180deg) translate3d(250px,-50px,150px);
 }
 
-/*Left-face cubes*/
-.left-tl {
+/*LEFT FACE CUBIES*/
+.ltl {
     transform:rotateY(-90deg) translate3d(-100px,50px,0px);
 }
-.left-cl {
+.lcl {
     transform:rotateY(-90deg) translate3d(-100px,150px,0px);
 }
-.left-bl {
+.lbl {
     transform:rotateY(-90deg) translate3d(-100px,250px,0px);
 }
-.left-tc {
+.ltc {
     transform:rotateY(-90deg) translate3d(0px,50px,0px);
 }
-.left-cc {
-    transform:rotateY(-90deg) translate3d(0px,150px,0px);
+.lcc {
+    transform:rotateY(-90deg) translate3d(0px,150px,0px);   
 }
-.left-bc {
+.lbc {
     transform:rotateY(-90deg) translate3d(0px,250px,0px);
 }
-.left-tr {
+.ltr {
     transform:rotateY(-90deg) translate3d(100px,50px,0px);
 }
-.left-cr {
+.lcr {
     transform:rotateY(-90deg) translate3d(100px,150px,0px);
 }
-.left-br {
+.lbr {
     transform:rotateY(-90deg) translate3d(100px,250px,0px);
 }
 
-/*Right-face cubes*/
-.right-tl {
+/*RIGHT FACE CUBIES*/
+.rtl {
     transform:rotateY(90deg) translate3d(-100px,50px,300px);
 }
-.right-cl {
+.rcl {
     transform:rotateY(90deg) translate3d(-100px,150px,300px);
 }
-.right-bl {
+.rbl {
     transform:rotateY(90deg) translate3d(-100px,250px,300px);
 }
-.right-tc {
+.rtc {
     transform:rotateY(90deg) translate3d(0px,50px,300px);
 }
-.right-cc {
+.rcc {
     transform:rotateY(90deg) translate3d(0px,150px,300px);
 }
-.right-bc {
+.rbc {
     transform:rotateY(90deg) translate3d(0px,250px,300px);
 }
-.right-tr {
+.rtr {
     transform:rotateY(90deg) translate3d(100px,50px,300px);
 }
-.right-cr {
+.rcr {
     transform:rotateY(90deg) translate3d(100px,150px,300px);
 }
-.right-br {
+.rbr {
     transform:rotateY(90deg) translate3d(100px,250px,300px);
-}
-
-/* cube-colors */
-#cube .top {
-    background-color: white;
-}
-#cube .front {
-    background-color: green;
-}
-#cube .down {
-    background-color: yellow;
-}
-#cube .back {
-    background-color: blue;
-}
-#cube .left {
-    background-color: orange;
-}
-#cube .right {
-    background-color: red;
 }

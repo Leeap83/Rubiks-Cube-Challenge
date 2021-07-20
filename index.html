@@ -1,93 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rubik's Cube</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+<title>Rubik's Cube</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="script.js"></script>
+<script src="//yui-s.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
+<script src="script.js"></script>
+<script>
+YUI().use('node','rubik-simple',function(Y){
+    var cube = window.cube = new Y.Rubik();
+    cube._disabledFLick = true;
+    cube.run();    
+});
+</script>
+
 </head>
 <body>
     <header>
-        <h2 class="header">Rubik's Cube</h2>
+        <h2>Rubik's Cube</h2>
     </header>
     <section id="rubik">
-        <div class="container" id="cube-container">
+        <div class="row align-items-center">
+            <div id="control" class="col-12 controls">
+                <h3 class="text-center">Use the buttons to rotate face clockwise</h3>
+                <p class="text-center">
+                    <input type="button" class="btn btn-secondary" value="LM">
+                    <input type="button" class="btn btn-secondary" value="RM">
+                    <input type="button" class="btn btn-secondary" value="FS">
+                    <input type="button" class="btn btn-secondary" value="BS">
+                    <input type="button" class="btn btn-secondary" value="UE">
+                    <input type="button" class="btn btn-secondary" value="DE">
+                    <input type="button" class="btn btn-secondary" value="CE">
+                    <input type="button" class="btn btn-secondary" value="CS">
+                </p>
+            </div>
+        </div>
+        <div id="cube-container" class="container">
             <div id="cube-viewport">
                 <div id="cube" class="threeDView">
-                    <div class="top-face">
-                        <div class="top-tl cubes top"><div><span>T1</span></div></div>
-                        <div class="top-cl cubes top"><div><span>T2</span></div></div>
-                        <div class="top-bl cubes top"><div><span>T3</span></div></div>
-                        <div class="top-tc cubes top"><div><span>T4</span></div></div>
-                        <div class="top-cc cubes top"><div><span>T5</span></div></div>
-                        <div class="top-bc cubes top"><div><span>T6</span></div></div>
-                        <div class="top-tr cubes top"><div><span>T7</span></div></div>
-                        <div class="top-cr cubes top"><div><span>T8</span></div></div>
-                        <div class="top-br cubes top"><div><span>T9</span></div></div>    
-                    </div>
-                    <div class="front-face">
-                        <div class="front-tl cubes front"><div><span>F1</span></div></div>
-                        <div class="front-cl cubes front"><div><span>F2</span></div></div>
-                        <div class="front-bl cubes front"><div><span>F3</span></div></div>
-                        <div class="front-tc cubes front"><div><span>F4</span></div></div>
-                        <div class="front-cc cubes front"><div><span>F5</span></div></div>
-                        <div class="front-bc cubes front"><div><span>F6</span></div></div>
-                        <div class="front-tr cubes front"><div><span>F7</span></div></div>
-                        <div class="front-cr cubes front"><div><span>F8</span></div></div>
-                        <div class="front-br cubes front"><div><span>F9</span></div></div>
-                    </div>
-                    <div class="down-face">
-                        <div class="down-tl cubes down"><div><span>D1</span></div></div>
-                        <div class="down-cl cubes down"><div><span>D2</span></div></div>
-                        <div class="down-bl cubes down"><div><span>D3</span></div></div>
-                        <div class="down-tc cubes down"><div><span>D4</span></div></div>
-                        <div class="down-cc cubes down"><div><span>D5</span></div></div>
-                        <div class="down-bc cubes down"><div><span>D6</span></div></div>
-                        <div class="down-tr cubes down"><div><span>D7</span></div></div>
-                        <div class="down-cr cubes down"><div><span>D8</span></div></div>
-                        <div class="down-br cubes down"><div><span>D9</span></div></div>
-                    </div>
-                    <div class="back-face">
-                        <div class="back-tl cubes back"><div><span>B1</span></div></div>
-                        <div class="back-cl cubes back"><div><span>B2</span></div></div>
-                        <div class="back-bl cubes back"><div><span>B3</span></div></div>
-                        <div class="back-tc cubes back"><div><span>B4</span></div></div>
-                        <div class="back-cc cubes back"><div><span>B5</span></div></div>
-                        <div class="back-bc cubes back"><div><span>B6</span></div></div>
-                        <div class="back-tr cubes back"><div><span>B7</span></div></div>
-                        <div class="back-cr cubes back"><div><span>B8</span></div></div>
-                        <div class="back-br cubes back"><div><span>B9</span></div></div>
-                    </div>
-                    <div class="left-face">
-                        <div class="left-tl cubes left"><div><span>L1</span></div></div>
-                        <div class="left-cl cubes left"><div><span>L2</span></div></div>
-                        <div class="left-bl cubes left"><div><span>L3</span></div></div>
-                        <div class="left-tc cubes left"><div><span>L4</span></div></div>
-                        <div class="left-cc cubes left"><div><span>L5</span></div></div>
-                        <div class="left-bc cubes left"><div><span>L6</span></div></div>
-                        <div class="left-tr cubes left"><div><span>L7</span></div></div>
-                        <div class="left-cr cubes left"><div><span>L8</span></div></div>
-                        <div class="left-br cubes left"><div><span>L9</span></div></div>
-                    </div>
-                    <div class="right-face">
-                        <div class="right-tl cubes right"><div><span>R1</span></div></div>
-                        <div class="right-cl cubes right"><div><span>R2</span></div></div>
-                        <div class="right-bl cubes right"><div><span>R3</span></div></div>
-                        <div class="right-tc cubes right"><div><span>R4</span></div></div>
-                        <div class="right-cc cubes right"><div><span>R5</span></div></div>
-                        <div class="right-bc cubes right"><div><span>R6</span></div></div>
-                        <div class="right-tr cubes right"><div><span>R7</span></div></div>
-                        <div class="right-cr cubes right"><div><span>R8</span></div></div>
-                        <div class="right-br cubes right"><div><span>R9</span></div></div>
-                    </div>
+                    <!-- UP FACE -->                            
+                    <div class="utl square white up LM UE BS"><div><span>U1</span></div></div> 
+                    <div class="ucl square white up LM UE CS"><div><span>U2</span></div></div>
+                    <div class="ubl square white up LM UE FS"><div><span>U3</span></div></div>           
+                    <div class="utc square white up CM UE BS"><div><span>U4</span></div></div>
+                    <div class="ucc square white up CM UE CS"><div><span>U5</span></div></div>
+                    <div class="ubc square white up CM UE FS"><div><span>U6</span></div></div>
+                    <div class="utr square white up RM UE BS"><div><span>U7</span></div></div>
+                    <div class="ucr square white up RM UE CS"><div><span>U8</span></div></div>
+                    <div class="ubr square white up RM UE FS"><div><span>U9</span></div></div>
+            
+                    <!-- FRONT FACE -->                
+                    <div class="ftl square red front LM UE FS"><div><span>F1</span></div></div>
+                    <div class="fcl square red front LM CE FS"><div><span>F2</span></div></div>
+                    <div class="fbl square red front LM DE FS"><div><span>F3</span></div></div>      
+                    <div class="ftc square red front CM UE FS"><div><span>F4</span></div></div>
+                    <div class="fcc square red front CM CE FS"><div><span>F5</span></div></div>
+                    <div class="fbc square red front CM DE FS"><div><span>F6</span></div></div>
+                    <div class="ftr square red front RM UE FS"><div><span>F7</span></div></div>
+                    <div class="fcr square red front RM CE FS"><div><span>F8</span></div></div>
+                    <div class="fbr square red front RM DE FS"><div><span>F9</span></div></div>
+                
+                    <!--DOWN FACE -->             
+                    <div class="dtl square yellow down LM DE FS"><div><span>D1</span></div></div>
+                    <div class="dcl square yellow down LM DE CS"><div><span>D2</span></div></div>
+                    <div class="dbl square yellow down LM DE BS"><div><span>D3</span></div></div>            
+                    <div class="dtc square yellow down CM DE FS"><div><span>D4</span></div></div>
+                    <div class="dcc square yellow down CM DE CS"><div><span>D5</span></div></div>
+                    <div class="dbc square yellow down CM DE BS"><div><span>D6</span></div></div>   
+                    <div class="dtr square yellow down RM DE FS"><div><span>D7</span></div></div>
+                    <div class="dcr square yellow down RM DE CS"><div><span>D8</span></div></div>
+                    <div class="dbr square yellow down RM DE BS"><div><span>D9</span></div></div>
+                
+                    <!--BACK FACE -->           
+                    <div class="btl square orange back LM DE BS"><div><span>B1</span></div></div>
+                    <div class="bcl square orange back LM CE BS"><div><span>B2</span></div></div>
+                    <div class="bbl square orange back LM UE BS"><div><span>B3</span></div></div>   
+                    <div class="btc square orange back CM DE BS"><div><span>B4</span></div></div>
+                    <div class="bcc square orange back CM CE BS"><div><span>B5</span></div></div>
+                    <div class="bbc square orange back CM UE BS"><div><span>B6</span></div></div> 
+                    <div class="btr square orange back RM DE BS"><div><span>B7</span></div></div>
+                    <div class="bcr square orange back RM CE BS"><div><span>B8</span></div></div>
+                    <div class="bbr square orange back RM UE BS"><div><span>B9</span></div></div> 
+                
+                    <!--LEFT FACE -->        
+                    <div class="ltl square left green LM UE BS"><div><span>L1</span></div></div>
+                    <div class="lcl square left green LM CE BS"><div><span>L2</span></div></div>
+                    <div class="lbl square left green LM DE BS"><div><span>L3</span></div></div>
+                    <div class="ltc square left green LM UE CS"><div><span>L4</span></div></div>
+                    <div class="lcc square left green LM CE CS"><div><span>L5</span></div></div>
+                    <div class="lbc square left green LM DE CS"><div><span>L6</span></div></div>
+                    <div class="ltr square left green LM UE FS"><div><span>L7</span></div></div>
+                    <div class="lcr square left green LM CE FS"><div><span>L8</span></div></div>
+                    <div class="lbr square left green LM DE FS"><div><span>L9</span></div></div>
+
+                    <!--RIGHT FACE -->         
+                    <div class="rtl square blue right RM UE FS"><div><span>R1</span></div></div>
+                    <div class="rcl square blue right RM CE FS"><div><span>R2</span></div></div>
+                    <div class="rbl square blue right RM DE FS"><div><span>R3</span></div></div>
+                    <div class="rtc square blue right RM UE CS"><div><span>R4</span></div></div>
+                    <div class="rcc square blue right RM CE CS"><div><span>R5</span></div></div>
+                    <div class="rbc square blue right RM DE CS"><div><span>R6</span></div></div>
+                    <div class="rtr square blue right RM UE BS"><div><span>R7</span></div></div>
+                    <div class="rcr square blue right RM CE BS"><div><span>R8</span></div></div>
+                    <div class="rbr square blue right RM DE BS"><div><span>R9</span></div></div>                
                 </div>
             </div>
         </div>
     </section>
-
+    <script>
+        document.querySelector('#control').addEventListener("click", inputClick, false);
+        function inputClick(e){
+            var move = e.target.value;
+            if(move && move!== 'on'){
+                move = move.split('');
+                cube._expectingTransition = true;
+                cube._doMovement({face: move[0], slice: move[1],rotate: 'right'});
+            }
+        }
+        function toggleView(){
+            cube._disabledFLick = cube._disabledFLick ? false : true;
+        }
+    </script>
 </body>
 </html>
